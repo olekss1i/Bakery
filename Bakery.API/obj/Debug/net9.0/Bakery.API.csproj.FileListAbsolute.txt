@@ -361,3 +361,5 @@ C:\Users\user\source\repos\Bakery\Bakery.API\bin\Debug\net9.0\Microsoft.AspNetCo
 C:\Users\user\source\repos\Bakery\Bakery.API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\user\source\repos\Bakery\Bakery.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\user\source\repos\Bakery\Bakery.API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\user\source\repos\Bakery\Bakery.API\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+C:\Users\user\source\repos\Bakery\Bakery.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll

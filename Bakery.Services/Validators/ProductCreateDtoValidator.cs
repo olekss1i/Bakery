@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Bakery.Services.DTO;
 using FluentValidation;
+using Bakery.Services.DTO;
 
 namespace Bakery.Services.Validators
 {
@@ -13,10 +13,10 @@ namespace Bakery.Services.Validators
     {
         public ProductCreateDtoValidator()
         {
-            RuleFor(p => p.Name).NotEmpty().MaximumLength(25);
-            RuleFor(p => p.Description).MaximumLength(250);
-            RuleFor(p => p.Price).GreaterThan(0);
+            RuleFor(x => x.Name)
+                .NotEmpty().WithMessage("Название обязательно");
+            RuleFor(x => x.Price)
+                .GreaterThan(0).WithMessage("Цена должна быть больше 0");
         }
     }
 }
-
