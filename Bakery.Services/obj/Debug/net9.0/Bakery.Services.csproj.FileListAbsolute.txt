@@ -1,0 +1,15 @@
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.csproj.AssemblyReference.cache
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.AssemblyInfoInputs.cache
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.AssemblyInfo.cs
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.csproj.CoreCompileInputs.cache
+C:\Users\user\BakeryProject\Bakery.Services\bin\Debug\net9.0\Bakery.Services.deps.json
+C:\Users\user\BakeryProject\Bakery.Services\bin\Debug\net9.0\Bakery.Services.dll
+C:\Users\user\BakeryProject\Bakery.Services\bin\Debug\net9.0\Bakery.Services.pdb
+C:\Users\user\BakeryProject\Bakery.Services\bin\Debug\net9.0\Bakery.Infrastructure.dll
+C:\Users\user\BakeryProject\Bakery.Services\bin\Debug\net9.0\Bakery.Infrastructure.pdb
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.S.89B71901.Up2Date
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.dll
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\refint\Bakery.Services.dll
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\Bakery.Services.pdb
+C:\Users\user\BakeryProject\Bakery.Services\obj\Debug\net9.0\ref\Bakery.Services.dll

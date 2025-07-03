@@ -1,0 +1,14 @@
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.AssemblyInfo.cs
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\BakeryProject\Bakery.Infrastructure\bin\Debug\net9.0\Bakery.Infrastructure.deps.json
+C:\Users\user\BakeryProject\Bakery.Infrastructure\bin\Debug\net9.0\Bakery.Infrastructure.runtimeconfig.json
+C:\Users\user\BakeryProject\Bakery.Infrastructure\bin\Debug\net9.0\Bakery.Infrastructure.dll
+C:\Users\user\BakeryProject\Bakery.Infrastructure\bin\Debug\net9.0\Bakery.Infrastructure.pdb
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.dll
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\refint\Bakery.Infrastructure.dll
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.pdb
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\Bakery.Infrastructure.genruntimeconfig.cache
+C:\Users\user\BakeryProject\Bakery.Infrastructure\obj\Debug\net9.0\ref\Bakery.Infrastructure.dll
