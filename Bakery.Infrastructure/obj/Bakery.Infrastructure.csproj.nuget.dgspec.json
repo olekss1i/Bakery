@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\BakeryProject\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj": {}
+    "C:\\Users\\user\\source\\repos\\Bakery\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\BakeryProject\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj": {
+    "C:\\Users\\user\\source\\repos\\Bakery\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\BakeryProject\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\user\\source\\repos\\Bakery\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj",
         "projectName": "Bakery.Infrastructure",
-        "projectPath": "C:\\Users\\user\\BakeryProject\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\user\\source\\repos\\Bakery\\Bakery.Infrastructure\\Bakery.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\BakeryProject\\Bakery.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\user\\source\\repos\\Bakery\\Bakery.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

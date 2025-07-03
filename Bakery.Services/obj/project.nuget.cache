@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uFH42TVdKpM=",
+  "dgSpecHash": "51DISwjuBIw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\BakeryProject\\Bakery.Services\\Bakery.Services.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\Bakery\\Bakery.Services\\Bakery.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

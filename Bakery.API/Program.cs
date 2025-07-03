@@ -2,16 +2,17 @@ using Bakery.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Добавляем DbContext с SQL Server (строку подключения берем из appsettings.json)
+// Підключення DbContext з рядком підключення з appsettings.json
 builder.Services.AddDbContext<BakeryDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Добавляем контроллеры (Web API)
+// Додаємо сервіси контролерів
 builder.Services.AddControllers();
 
-// Добавляем Swagger (для автодокументации API)
+// Налаштовуємо Swagger/OpenAPI для документації API
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
@@ -23,7 +24,15 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// В режиме разработки включаем Swagger UI
+// Автоматично застосовуємо міграції і сідимо базу при старті програми
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<BakeryDbContext>();
+    dbContext.Database.Migrate(); // застосувати міграції (створити БД, якщо потрібно)
+    dbContext.Seed();             // заповнити початковими даними
+}
+
+// У середовищі розробки вмикаємо Swagger UI
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -33,10 +42,10 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// Включаем маршрутизацию
 app.UseRouting();
 
-// Включаем маппинг контроллеров
+app.UseAuthorization(); // якщо додаси авторизацію — поки можна залишити
+
 app.MapControllers();
 
 app.Run();

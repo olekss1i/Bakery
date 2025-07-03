@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 using Bakery.Infrastructure.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Bakery.Infrastructure
 {
@@ -29,7 +30,6 @@ namespace Bakery.Infrastructure
         {
             base.OnModelCreating(modelBuilder);
 
-            // Конфигурация ProductsIngredients — составной ключ
             modelBuilder.Entity<ProductsIngredients>()
                 .HasKey(pi => new { pi.ProductId, pi.IngredientId });
 
@@ -43,7 +43,6 @@ namespace Bakery.Infrastructure
                 .WithMany(i => i.ProductsIngredients)
                 .HasForeignKey(pi => pi.IngredientId);
 
-            // Конфигурация Feedback
             modelBuilder.Entity<Feedback>(entity =>
             {
                 entity.HasKey(f => f.Id);
@@ -68,11 +67,38 @@ namespace Bakery.Infrastructure
                       .HasForeignKey(f => f.ProductId)
                       .OnDelete(DeleteBehavior.Cascade);
 
-                
                 entity.ToTable(tb => tb.HasCheckConstraint("CK_Feedback_Rating", "Rating >= 1 AND Rating <= 5"));
             });
+        }
 
-           
+        public static void SeedData(BakeryDbContext context)
+        {
+            if (!context.Products.Any())
+            {
+                context.Products.AddRange(new[]
+                {
+                    new Product { Name = "Bread", Description = "Fresh bread", Price = 20 },
+                    new Product { Name = "Cake", Description = "Chocolate cake", Price = 50 },
+                    new Product { Name = "Pie", Description = "Apple pie", Price = 35 },
+                });
+            }
+
+            if (!context.Ingredients.Any())
+            {
+                context.Ingredients.AddRange(new[]
+                {
+                    new Ingredient { Name = "Flour" },
+                    new Ingredient { Name = "Sugar" },
+                    new Ingredient { Name = "Butter" },
+                });
+            }
+
+            if (!context.Customers.Any())
+            {
+                context.Customers.Add(new Customer { Name = "John Doe", Email = "john@example.com" });
+            }
+
+            context.SaveChanges();
         }
     }
 }
