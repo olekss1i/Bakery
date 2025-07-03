@@ -1,6 +1,9 @@
+using Bakery.Infrastructure.Models;
+using Bakery.Infrastructure;
 using Bakery.Services.DTO;
-using Bakery.Services.Services;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bakery.API.Controllers
 {
@@ -8,48 +11,70 @@ namespace Bakery.API.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductService _service;
-        public ProductsController(IProductService service)
+        private readonly BakeryDbContext _context;
+        private readonly IMapper _mapper;
+
+        public ProductsController(BakeryDbContext context, IMapper mapper)
         {
-            _service = service;
+            _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<IEnumerable<ProductDto>>> Get()
         {
-            var products = await _service.GetAllAsync();
-            return Ok(products);
+            var products = await _context.Products.ToListAsync();
+            return Ok(_mapper.Map<List<ProductDto>>(products));
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<ActionResult<ProductDto>> Get(int id)
         {
-            var product = await _service.GetByIdAsync(id);
+            var product = await _context.Products.FindAsync(id);
             if (product == null) return NotFound();
-            return Ok(product);
+
+            return Ok(_mapper.Map<ProductDto>(product));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(ProductCreateDto dto)
+        public async Task<ActionResult<ProductDto>> Create(ProductCreateDto createDto)
         {
-            var product = await _service.CreateAsync(dto);
-            return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
+            var product = _mapper.Map<Product>(createDto);
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+
+            var productDto = _mapper.Map<ProductDto>(product);
+
+            return CreatedAtAction(nameof(Get), new { id = product.Id }, productDto);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, ProductCreateDto dto)
+        public async Task<IActionResult> Update(int id, ProductDto productDto)
         {
-            var updated = await _service.UpdateAsync(id, dto);
-            if (!updated) return NotFound();
+            if (id != productDto.Id)
+                return BadRequest();
+
+            var product = await _context.Products.FindAsync(id);
+            if (product == null) return NotFound();
+
+            _mapper.Map(productDto, product);
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleted = await _service.DeleteAsync(id);
-            if (!deleted) return NotFound();
+            var product = await _context.Products.FindAsync(id);
+            if (product == null) return NotFound();
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
             return NoContent();
         }
     }
 }
+
+

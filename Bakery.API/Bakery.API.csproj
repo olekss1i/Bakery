@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -6,8 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-	  <!-- <Compile Include="C:\Users\user\source\repos\Bakery\Program.cs" Link="Program.cs" /> -->
+  <ItemGroup><!-- <Compile Include="C:\Users\user\source\repos\Bakery\Program.cs" Link="Program.cs" /> -->
+  
+    <Folder Include="Mapping\" />
   </ItemGroup>
 
   <ItemGroup>

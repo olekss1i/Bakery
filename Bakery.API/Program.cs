@@ -49,3 +49,4 @@ app.UseAuthorization(); // якщо додаси авторизацію — поки можна залишити
 app.MapControllers();
 
 app.Run();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
